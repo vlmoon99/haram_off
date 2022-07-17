@@ -1,31 +1,31 @@
 {
-    "name": "Haram Off",
-    "description": "Hide all bad things in your browser",
-    "version": "1.0",
-    "manifest_version": 3,
-    "background": {
-        "service_worker": "background_service_worker.js"
-      },
-      "permissions": ["tabs"],
-      "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-          "16": "/assets/icon.png",
-          "32": "/assets/icon.png",
-          "48": "/assets/icon.png",
-          "128": "/assets/icon.png"
-        }
-    },
-    "content_scripts": [
-      {
-        "matches": ["http://*/*","https://*/*"],
-        "js": ["block_haram_content_script.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      {
-        "resources": [],
-        "matches": ["http://*/*"]
-      }
-    ]
-  }
+  "name": "Haram Off",
+  "description": "Hide all bad things in your browser",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background_service_worker.js"
+  },
+  "permissions": ["tabs", "tabCapture"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/assets/icon.png",
+      "32": "/assets/icon.png",
+      "48": "/assets/icon.png",
+      "128": "/assets/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["block_haram_content_script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["http://*/*"]
+    }
+  ]
+}
